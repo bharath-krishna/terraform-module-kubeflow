@@ -1,7 +1,5 @@
 # Terraform module Kubeflow
 
-This is a module deploying kubeflow purely in Terraform. Versioning is following Terraform's own versions : 0.12.x and 0.13.x. The active development will be now done on Terraform 0.13, 0.12 will be "frozen".
-
 [![maintained by dataroots](https://img.shields.io/badge/maintained%20by-dataroots-%2300b189)](https://dataroots.io)
 [![Terraform 0.13](https://img.shields.io/badge/terraform-0.13-%23623CE4)](https://www.terraform.io)
 [![Terraform Registry](https://img.shields.io/badge/terraform-registry-%23623CE4)](https://registry.terraform.io/modules/datarootsio/kubeflow/module/)
@@ -59,6 +57,9 @@ module "kubeflow" {
   domain_name         = "foo.local"
   letsencrypt_email   = "foo@bar.local"
   kubeflow_components = ["pipelines"]
+
+  config_context       = "minikube"
+  config_path          = "~/.kube/config"
 }
 ```
 
@@ -80,6 +81,9 @@ module "kubeflow" {
   domain_name          = "foo.local"
   letsencrypt_email    = "foo@bar.local"
   kubeflow_components  = ["pipelines"]
+
+  config_context       = "minikube"
+  config_path          = "~/.kube/config"
 }
 ```
 
